@@ -1,0 +1,79 @@
+{
+	"suspects": [
+		{
+			"name": "s1",
+			"details": {
+				"height": 1,
+				"hand": "R"
+			}
+		},
+		{
+			"name": "s2",
+			"details": {
+				"height": 1.3,
+				"hand": "R"
+			}
+		},
+		{
+			"name": "s3",
+			"details": {
+				"height": 1.2,
+				"hand": "L"
+			}
+		}
+	],
+	"places": [
+		{
+			"name": "p1",
+			"details": "d1"
+		},
+		{
+			"name": "p2",
+			"details": "d2"
+		},
+		{
+			"name": "p3",
+			"details": "d3"
+		}
+	],
+	"weapons": [
+		{
+			"name": "w1",
+			"details": "d1"
+		},
+		{
+			"name": "w2",
+			"details": "d2"
+		},
+		{
+			"name": "w3",
+			"details": "d3"
+		}
+	],
+	"clues": [
+		{
+			"name": "c1",
+			"details": "d1"
+		},
+		{
+			"name": "c2",
+			"details": "d2"
+		},
+		{
+			"name": "c3",
+			"details": "d3"
+		},
+		{
+			"name": "c4",
+			"details": "d1"
+		},
+		{
+			"name": "c5",
+			"details": "d2"
+		},
+		{
+			"name": "c6",
+			"details": "d3"
+		}
+	]
+}

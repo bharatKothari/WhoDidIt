@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://f74rdowswetb"]
+
+[ext_resource type="Script" path="res://deduction_cell/deduction_cell.gd" id="1_f8tc4"]
+[ext_resource type="Texture2D" uid="uid://bbpi77wwixe8y" path="res://assets/deduction_cell/check_mark_icon.png" id="2_npkh2"]
+[ext_resource type="Texture2D" uid="uid://64vo0cphm1kq" path="res://assets/deduction_cell/wrong_mark_icon.png" id="3_o06rd"]
+[ext_resource type="Texture2D" uid="uid://qwhr6xgcvvxj" path="res://assets/deduction_cell/wrong_mark_derived_icon.png" id="4_sfand"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vq41y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_npkh2")
+}],
+"loop": true,
+"name": &"check",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_o06rd")
+}],
+"loop": true,
+"name": &"cross",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_sfand")
+}],
+"loop": true,
+"name": &"derived_wrong",
+"speed": 5.0
+}]
+
+[node name="DeductionCell" type="Node2D"]
+script = ExtResource("1_f8tc4")
+
+[node name="Button" type="Button" parent="."]
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 45
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_vq41y")
+
+[connection signal="marked" from="." to="." method="_on_marked"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://uikvhefjpvb7"]
+
+[ext_resource type="Script" path="res://deduction_box/deduction_box.gd" id="1_kqegi"]
+[ext_resource type="PackedScene" uid="uid://f74rdowswetb" path="res://deduction_cell/deduction_cell.tscn" id="2_a1vru"]
+
+[node name="DeductionBox" type="Node2D"]
+script = ExtResource("1_kqegi")
+DeductionCell = ExtResource("2_a1vru")

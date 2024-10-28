@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dop4yu2v2a1xx"]
+
+[ext_resource type="PackedScene" uid="uid://3sjn4ldf4lnt" path="res://deduction_grid/deduction_grid.tscn" id="1_raa0t"]
+
+[node name="Main" type="Node"]
+
+[node name="DeductionGrid" parent="." instance=ExtResource("1_raa0t")]
+position = Vector2(150, 150)
