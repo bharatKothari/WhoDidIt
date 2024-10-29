@@ -9,6 +9,14 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"blank",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_npkh2")
 }],
 "loop": true,
@@ -17,26 +25,18 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_o06rd")
-}],
-"loop": true,
-"name": &"cross",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("4_sfand")
 }],
 "loop": true,
 "name": &"derived_wrong",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_o06rd")
+}],
+"loop": true,
+"name": &"wrong",
 "speed": 5.0
 }]
 
@@ -52,6 +52,7 @@ theme_override_font_sizes/font_size = 45
 position = Vector2(32, 32)
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_vq41y")
+animation = &"blank"
 
 [connection signal="marked" from="." to="." method="_on_marked"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

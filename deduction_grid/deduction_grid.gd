@@ -1,28 +1,15 @@
 extends Node2D
 
 @export var DeductionBox: PackedScene
+const Constants = preload("res://constants/Constants.gd")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	var file = "res://assets/level_details.json"
-	var level_text = FileAccess.get_file_as_string(file)
-	var level_details = JSON.parse_string(level_text)
-	var no_of_boxes = level_details.size()
-	create_deduction_box(no_of_boxes)
+#func _ready() -> void:
+	#create_deduction_grid(3,3)
 
-
-func create_deduction_box(boxes: int):
-	var deductionBox1 = DeductionBox.instantiate()
-	deductionBox1.grid_size = 4
-	var deductionBox2 = DeductionBox.instantiate()
-	deductionBox2.grid_size = 4
-	var deductionBox3 = DeductionBox.instantiate()
-	deductionBox3.grid_size = 4
-	
-	deductionBox2.position = Vector2(0,deductionBox2.grid_size*64)
-	deductionBox3.position = Vector2(deductionBox2.grid_size*64,0)
-	
-	add_child(deductionBox1)
-	add_child(deductionBox2)
-	add_child(deductionBox3)
-	
+func create_deduction_grid(dimensions: int, box_size: int):
+	for i in range(dimensions - 1):
+		for j in range(dimensions - i - 1):
+			var deductionBox = DeductionBox.instantiate()
+			deductionBox.position = Vector2(j * box_size * Constants.CELL_SIZE, i * box_size * Constants.CELL_SIZE)
+			deductionBox.create_deduction_box(box_size)
+			add_child(deductionBox)
