@@ -1,21 +1,22 @@
 extends Node
 
-@export var DimensionIcon: PackedScene = preload("res://dimension_icons/dimension_icon.tscn")
+@export var DimensionIcon: PackedScene = preload("res://dimensions/dimension_icon.tscn")
 const Constants = preload("res://constants/Constants.gd")
+var level_details: Dictionary
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var level_details = get_level_details()
+	level_details = get_level_details()
 	var dimensions = level_details[Constants.DIMENSIONS].size()
 	var box_size = level_details[Constants.DIMENSIONS][Constants.SUSPECTS].size()
 	
 	add_deduction_grid(dimensions, box_size)
-	add_dimension_icons(dimensions, box_size, level_details)
+	add_dimension_icons(dimensions)
 	
 func add_deduction_grid(dimensions: int, box_size: int):
 	get_child(0).create_deduction_grid(dimensions, box_size)
 	
-func add_dimension_icons(dimensions: int, box_size: int, level_details: Dictionary):
+func add_dimension_icons(dimensions: int):
 	var pos = 0
 	for i in range(dimensions - 1):
 		var dimension = level_details[Constants.DIMENSIONS][Constants.DIMENSION_LIST[i]]
@@ -41,3 +42,13 @@ func get_level_details() -> Dictionary:
 	var file = "res://assets/level_details.json"
 	var level_text = FileAccess.get_file_as_string(file)
 	return JSON.parse_string(level_text)
+
+
+func _on_suspects_button_pressed() -> void:
+	print("here")
+	var suspect_scene = load("res://dimensions/dimensions.tscn").instantiate()
+	suspect_scene.items = level_details[Constants.DIMENSIONS][Constants.SUSPECTS]
+	var main_scene = get_tree().root.get_node("Main")
+	main_scene.hide()
+	get_tree().root.add_child(suspect_scene)
+	suspect_scene.show()

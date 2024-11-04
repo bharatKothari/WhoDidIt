@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c84qelmjqe4qf"]
+
+[ext_resource type="Script" path="res://dimensions/dimensions.gd" id="1_0wvr2"]
+[ext_resource type="PackedScene" uid="uid://cfomuugvsi3jo" path="res://dimension_card/dimension_card.tscn" id="2_chs51"]
+
+[node name="Dimensions" type="Node2D"]
+script = ExtResource("1_0wvr2")
+dimension_card = ExtResource("2_chs51")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 138.0
+offset_bottom = 74.0
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

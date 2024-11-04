@@ -3,8 +3,44 @@
 [ext_resource type="Script" path="res://main/main.gd" id="1_e5i04"]
 [ext_resource type="PackedScene" uid="uid://3sjn4ldf4lnt" path="res://deduction_grid/deduction_grid.tscn" id="1_raa0t"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_e5i04")
 
 [node name="DeductionGrid" parent="." instance=ExtResource("1_raa0t")]
-position = Vector2(120, 120)
+position = Vector2(220, 120)
+
+[node name="suspectsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 120.0
+offset_right = 900.0
+offset_bottom = 184.0
+text = "Suspects"
+
+[node name="weaponsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 210.0
+offset_right = 900.0
+offset_bottom = 274.0
+text = "Weapons"
+
+[node name="placesButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 120.0
+offset_right = 1050.0
+offset_bottom = 184.0
+text = "Places"
+
+[node name="cluesButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 210.0
+offset_right = 1050.0
+offset_bottom = 274.0
+text = "Clues"
+
+[connection signal="pressed" from="suspectsButton" to="." method="_on_suspects_button_pressed"]
