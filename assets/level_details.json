@@ -26,29 +26,41 @@
 		"places": [
 			{
 				"name": "p1",
-				"details": "d1"
+				"details": {
+					"d1": "d1"
+				}
 			},
 			{
 				"name": "p2",
-				"details": "d2"
+				"details": {
+					"d1": "d1"
+				}
 			},
 			{
 				"name": "p3",
-				"details": "d3"
+				"details": {
+					"d1": "d1"
+				}
 			}
 		],
 		"weapons": [
 			{
 				"name": "w1",
-				"details": "d1"
+				"details": {
+					"d1": "d1"
+				}
 			},
 			{
 				"name": "w2",
-				"details": "d2"
+				"details": {
+					"d1": "d1"
+				}
 			},
 			{
 				"name": "w3",
-				"details": "d3"
+				"details": {
+					"d1": "d1"
+				}
 			}
 		],
 	},

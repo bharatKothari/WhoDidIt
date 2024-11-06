@@ -44,3 +44,5 @@ offset_bottom = 274.0
 text = "Clues"
 
 [connection signal="pressed" from="suspectsButton" to="." method="_on_suspects_button_pressed"]
+[connection signal="pressed" from="weaponsButton" to="." method="_on_weapons_button_pressed"]
+[connection signal="pressed" from="placesButton" to="." method="_on_places_button_pressed"]

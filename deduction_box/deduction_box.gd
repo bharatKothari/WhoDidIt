@@ -1,10 +1,9 @@
 extends Node2D
 
-@export var DeductionCell: PackedScene
+@export var DeductionCell: PackedScene = preload("res://deduction_cell/deduction_cell.tscn")
+
 const Constants = preload("res://constants/Constants.gd")
 
-#func _ready() -> void:
-	#create_deduction_box(3)
 
 func create_deduction_box(box_size: int):
 	for row in range(box_size):
@@ -17,6 +16,7 @@ func create_deduction_box(box_size: int):
 			
 			cell_instance.connect(Constants.MARKED_SIGNAL, _on_cell_marked)
 			add_child(cell_instance)
+
 
 func _on_cell_marked(mark: String ,marked_row: int, marked_column: int):
 	for cell in get_children():

@@ -1,10 +1,9 @@
 extends Node2D
 
-@export var DeductionBox: PackedScene
+@export var DeductionBox: PackedScene = preload("res://deduction_box/deduction_box.tscn")
+
 const Constants = preload("res://constants/Constants.gd")
 
-#func _ready() -> void:
-	#create_deduction_grid(3,3)
 
 func create_deduction_grid(dimensions: int, box_size: int):
 	for i in range(dimensions - 1):
